@@ -6,9 +6,10 @@ import Page from "../../components/ui/Page/Page";
 import Toolbar from "../../components/ui/Toolbar/Toolbar";
 import Grid from "../../components/Grid/Grid";
 
-import { fixtures } from "../../mock/fixtures";
+import { useFixtures } from "../../hooks/useFixtures";
+import type { Fixture } from "../../models/Fixture";
 
-const columnDefs: ColDef[] = [
+const columnDefs: ColDef<Fixture>[] = [
   {
     field: "date",
     headerName: "Tarih",
@@ -42,6 +43,8 @@ const columnDefs: ColDef[] = [
 ];
 
 export default function Explorer() {
+  const { fixtures, loading } = useFixtures();
+
   return (
     <Page
       title="Maç Gezgini"
@@ -64,10 +67,16 @@ export default function Explorer() {
         <button>Yenile</button>
       </Toolbar>
 
-      <Grid
-        rowData={fixtures}
-        columnDefs={columnDefs}
-      />
+      {loading ? (
+        <div className="grid-placeholder">
+          Maçlar yükleniyor...
+        </div>
+      ) : (
+        <Grid
+          rowData={fixtures}
+          columnDefs={columnDefs}
+        />
+      )}
 
       <div className="explorer-footer">
         <span>Aktif Filtre: 0</span>
