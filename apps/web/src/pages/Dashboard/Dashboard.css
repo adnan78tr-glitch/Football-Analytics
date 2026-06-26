@@ -1,12 +1,19 @@
 .dashboard {
-    height: 100%;
+    flex: 1;
+    min-height: 0;
+
     display: flex;
     flex-direction: column;
+
     gap: 18px;
+
     padding: 20px;
+
     overflow: hidden;
-    color: var(--color-text-primary);
+
     box-sizing: border-box;
+
+    color: var(--color-text-primary);
 }
 
 .dashboard-header h1 {
