@@ -1,8 +1,10 @@
 .explorer{
     height:100%;
+
     display:flex;
     flex-direction:column;
-    gap:16px;
+
+    min-height:0;
 }
 
 .explorer-header{
@@ -25,35 +27,84 @@
 .toolbar select{
     height:38px;
     padding:0 12px;
+
     border-radius:8px;
+
     border:1px solid #334155;
+
     background:#1e293b;
+
     color:white;
 }
 
 .toolbar button{
     padding:0 18px;
+
     border:none;
+
     border-radius:8px;
+
     background:#2563eb;
+
     color:white;
+
     cursor:pointer;
 }
 
 .grid-placeholder{
+
     flex:1;
+
     border:1px dashed #334155;
+
     border-radius:12px;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     font-size:22px;
+
     color:#64748b;
 }
 
+/**************************************************/
+
+.explorer .football-grid{
+
+    flex:1;
+
+    min-height:0;
+
+    margin-top:16px;
+
+}
+
+/**************************************************/
+
 .explorer-footer{
+
+    height:70px;
+
+    margin-top:18px;
+
+    padding:0 24px;
+
+    border:1px solid #334155;
+
+    border-radius:12px;
+
+    background:#1b2535;
+
     display:flex;
+
     justify-content:space-between;
-    font-size:13px;
-    color:#94a3b8;
+
+    align-items:center;
+
+    color:#cbd5e1;
+
+    flex-shrink:0;
 }

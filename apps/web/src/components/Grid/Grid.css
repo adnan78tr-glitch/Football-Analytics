@@ -1,23 +1,34 @@
 .football-grid{
-    flex:1;
-
-    min-height:0;
 
     width:100%;
+
+    flex:1;
+
+    min-height:500px;
+
+    display:flex;
+
 }
 
-.football-grid .ag-root-wrapper{
-    border:none;
-}
+.football-grid-test{
 
-.football-grid .ag-header{
-    font-weight:700;
-}
+    flex:1;
 
-.football-grid .ag-row{
-    cursor:pointer;
-}
+    background:#0f172a;
 
-.football-grid .ag-row:hover{
-    background:#1e3a5f !important;
+    border:2px solid #2563eb;
+
+    border-radius:12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:22px;
 }

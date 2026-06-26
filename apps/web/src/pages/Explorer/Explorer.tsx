@@ -1,5 +1,6 @@
 import "./Explorer.css";
 
+import { Search, RotateCw, Filter } from "lucide-react";
 import type { ColDef } from "ag-grid-community";
 
 import Page from "../../components/ui/Page/Page";
@@ -13,32 +14,41 @@ const columnDefs: ColDef<Fixture>[] = [
   {
     field: "date",
     headerName: "Tarih",
-    maxWidth: 100,
+    width: 95,
   },
   {
     field: "league",
     headerName: "Lig",
-    minWidth: 180,
+    width: 180,
   },
   {
     field: "home",
     headerName: "Ev Sahibi",
-    minWidth: 180,
+    flex: 1,
+    minWidth: 220,
   },
   {
     field: "away",
     headerName: "Deplasman",
-    minWidth: 180,
+    flex: 1,
+    minWidth: 220,
   },
   {
     field: "score",
     headerName: "Skor",
-    maxWidth: 100,
+    width: 90,
+    cellStyle: {
+      textAlign: "center",
+      fontWeight: "bold",
+    },
   },
   {
     field: "minute",
     headerName: "Dakika",
-    maxWidth: 110,
+    width: 95,
+    cellStyle: {
+      textAlign: "center",
+    },
   },
 ];
 
@@ -51,10 +61,14 @@ export default function Explorer() {
       subtitle="Canlı ve geçmiş maç verilerini görüntüleyin"
     >
       <Toolbar>
-        <input
-          type="text"
-          placeholder="Maç ara..."
-        />
+        <div className="toolbar-search">
+          <Search size={18} />
+
+          <input
+            type="text"
+            placeholder="Maç ara..."
+          />
+        </div>
 
         <select defaultValue="">
           <option value="">Tüm Ligler</option>
@@ -64,7 +78,15 @@ export default function Explorer() {
           <option value="">Tüm Marketler</option>
         </select>
 
-        <button>Yenile</button>
+        <button>
+          <Filter size={16} />
+          Filtrele
+        </button>
+
+        <button>
+          <RotateCw size={16} />
+          Yenile
+        </button>
       </Toolbar>
 
       {loading ? (
@@ -79,9 +101,11 @@ export default function Explorer() {
       )}
 
       <div className="explorer-footer">
-        <span>Aktif Filtre: 0</span>
+        <span>Toplam Maç : {fixtures.length}</span>
 
-        <span>Toplam Maç: {fixtures.length}</span>
+        <span>Filtre : 0</span>
+
+        <span>Seçili : 0</span>
       </div>
     </Page>
   );

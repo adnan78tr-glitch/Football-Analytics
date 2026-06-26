@@ -1,55 +1,39 @@
-import {
-  AgGridReact,
-} from "ag-grid-react";
-
-import type {
-  ColDef,
-} from "ag-grid-community";
-
-import {
-  ModuleRegistry,
-  AllCommunityModule,
-} from "ag-grid-community";
+import { AgGridReact } from "ag-grid-react";
+import type { ColDef } from "ag-grid-community";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 
 import "./Grid.css";
 
-ModuleRegistry.registerModules([
-  AllCommunityModule,
-]);
-
-type GridProps = {
-  rowData: unknown[];
-  columnDefs: ColDef[];
+type GridProps<T = unknown> = {
+  rowData: T[];
+  columnDefs: ColDef<T>[];
 };
 
-export default function Grid({
+export default function Grid<T = unknown>({
   rowData,
   columnDefs,
-}: GridProps) {
+}: GridProps<T>) {
   return (
-    <div className="ag-theme-quartz-dark football-grid">
-      <AgGridReact
+    <div
+      className="ag-theme-quartz-dark football-grid"
+      style={{
+        width: "100%",
+        height: "100%",
+        minHeight: "600px",
+      }}
+    >
+      <AgGridReact<T>
+        theme="legacy"
         rowData={rowData}
         columnDefs={columnDefs}
-        animateRows
-
-        rowSelection="single"
-
-        pagination
-        paginationPageSize={25}
-
-        suppressCellFocus
-
         defaultColDef={{
-          sortable: true,
-          filter: true,
-          floatingFilter: true,
-          resizable: true,
           flex: 1,
           minWidth: 120,
+          sortable: true,
+          filter: true,
+          resizable: true,
         }}
       />
     </div>
