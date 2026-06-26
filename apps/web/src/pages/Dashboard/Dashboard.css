@@ -1,68 +1,79 @@
 .dashboard {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 28px;
-    padding: 28px;
+    gap: 18px;
+    padding: 20px;
+    overflow: hidden;
     color: var(--color-text-primary);
+    box-sizing: border-box;
 }
 
 .dashboard-header h1 {
     margin: 0;
-    font-size: 34px;
+    font-size: 26px;
     font-weight: 700;
 }
 
 .dashboard-header p {
-    margin-top: 6px;
+    margin-top: 4px;
+    font-size: 14px;
     color: var(--color-text-secondary);
-    font-size: 15px;
 }
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
 }
 
 .stat-card {
-    background: #1E293B;
+    background: #1e293b;
     border: 1px solid #334155;
     border-radius: 12px;
-    padding: 20px;
-    transition: all .2s ease;
+    padding: 16px;
+    transition: .2s;
 }
 
 .stat-card:hover {
-    transform: translateY(-4px);
-    border-color: #2563EB;
+    border-color: #2563eb;
+    transform: translateY(-2px);
 }
 
 .stat-title {
-    color: #94A3B8;
-    font-size: 13px;
+    font-size: 12px;
+    color: #94a3b8;
 }
 
 .stat-card h2 {
-    margin: 18px 0 10px;
-    font-size: 30px;
-    font-weight: 700;
+    margin: 10px 0 6px;
+    font-size: 24px;
 }
 
 .stat-status {
-    color: #38BDF8;
-    font-size: 13px;
+    font-size: 12px;
+    color: #38bdf8;
+}
+
+.dashboard-panels {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px;
+    min-height: 0;
 }
 
 .dashboard-section {
-    background: #1E293B;
+    background: #1e293b;
     border: 1px solid #334155;
     border-radius: 12px;
-    padding: 22px;
+    padding: 18px;
+    overflow: hidden;
 }
 
 .dashboard-section h3 {
-    margin: 0 0 18px;
-    font-size: 18px;
+    margin: 0 0 14px;
+    font-size: 16px;
 }
 
 .dashboard-section ul {
@@ -71,13 +82,7 @@
 }
 
 .dashboard-section li {
-    margin-bottom: 10px;
-    color: #CBD5E1;
-}
-
-.dashboard-footer {
-    text-align: center;
-    color: #64748B;
+    margin-bottom: 8px;
     font-size: 13px;
-    padding-bottom: 10px;
+    color: #cbd5e1;
 }
