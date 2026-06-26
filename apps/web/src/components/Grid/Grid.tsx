@@ -1,40 +1,37 @@
 import { AgGridReact } from "ag-grid-react";
-import type { ColDef } from "ag-grid-community";
+import {
+  ModuleRegistry,
+  AllCommunityModule,
+  type ColDef,
+} from "ag-grid-community";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 
-import "./Grid.css";
+ModuleRegistry.registerModules([
+  AllCommunityModule,
+]);
 
-type GridProps<T = unknown> = {
+type Props<T> = {
   rowData: T[];
   columnDefs: ColDef<T>[];
 };
 
-export default function Grid<T = unknown>({
+export default function Grid<T>({
   rowData,
   columnDefs,
-}: GridProps<T>) {
+}: Props<T>) {
   return (
     <div
-      className="ag-theme-quartz-dark football-grid"
+      className="ag-theme-quartz"
       style={{
         width: "100%",
-        height: "100%",
-        minHeight: "600px",
+        height: 600,
       }}
     >
-      <AgGridReact<T>
-        theme="legacy"
+      <AgGridReact
         rowData={rowData}
         columnDefs={columnDefs}
-        defaultColDef={{
-          flex: 1,
-          minWidth: 120,
-          sortable: true,
-          filter: true,
-          resizable: true,
-        }}
       />
     </div>
   );

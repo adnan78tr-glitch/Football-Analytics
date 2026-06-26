@@ -1,34 +1,27 @@
-.football-grid{
+.football-grid {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
 
-    width:100%;
+    display: flex;
+    flex-direction: column;
 
-    flex:1;
+    overflow: hidden;
 
-    min-height:500px;
+    border-radius: 12px;
 
-    display:flex;
-
+    background: #111827;
 }
 
-.football-grid-test{
+.football-grid .ag-root-wrapper {
+    flex: 1;
+    border: none;
+}
 
-    flex:1;
+.football-grid .ag-root-wrapper-body {
+    flex: 1;
+}
 
-    background:#0f172a;
-
-    border:2px solid #2563eb;
-
-    border-radius:12px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:white;
-
-    font-size:22px;
+.football-grid .ag-center-cols-viewport {
+    min-height: 0;
 }
