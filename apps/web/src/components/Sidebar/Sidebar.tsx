@@ -1,14 +1,13 @@
 import "./Sidebar.css";
+import tr from "../../i18n/tr";
 
 const menuItems = [
-  { id: "dashboard", icon: "🏠", label: "Dashboard" },
-  { id: "fixtures", icon: "⚽", label: "Fixtures" },
-  { id: "live", icon: "🔴", label: "Live" },
-  { id: "historical", icon: "📚", label: "Historical" },
-  { id: "analytics", icon: "📊", label: "Analytics" },
-  { id: "backtest", icon: "📈", label: "Backtest" },
-  { id: "predictions", icon: "🤖", label: "Predictions" },
-  { id: "settings", icon: "⚙", label: "Settings" },
+  { id: "dashboard", icon: "🏠", label: tr.dashboard },
+  { id: "explorer", icon: "⚽", label: tr.explorer },
+  { id: "analytics", icon: "📊", label: tr.analytics },
+  { id: "backtest", icon: "📈", label: tr.backtest },
+  { id: "collector", icon: "🛰", label: tr.collector },
+  { id: "settings", icon: "⚙", label: tr.settings },
 ];
 
 export default function Sidebar() {
@@ -21,10 +20,7 @@ export default function Sidebar() {
             className={`sidebar-item ${index === 0 ? "active" : ""}`}
           >
             <span className="sidebar-icon">{item.icon}</span>
-
-            <span className="sidebar-label">
-              {item.label}
-            </span>
+            <span className="sidebar-label">{item.label}</span>
           </button>
         ))}
       </nav>

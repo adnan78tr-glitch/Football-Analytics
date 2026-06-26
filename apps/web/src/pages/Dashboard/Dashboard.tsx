@@ -2,50 +2,52 @@ import "./Dashboard.css";
 
 const stats = [
   {
-    title: "Today's Fixtures",
+    title: "Bugünkü Maçlar",
     value: "183",
-    status: "+24 Today",
+    status: "+24 Bugün",
   },
   {
-    title: "Live Matches",
+    title: "Canlı Maçlar",
     value: "12",
-    status: "3 Started",
+    status: "3 Yeni Başladı",
   },
   {
-    title: "Historical",
+    title: "Geçmiş Maçlar",
     value: "5.2 M",
-    status: "Database",
+    status: "Veritabanı",
   },
   {
-    title: "Collector",
-    value: "Running",
-    status: "Healthy",
+    title: "Veri Toplayıcı",
+    value: "Çalışıyor",
+    status: "Sağlıklı",
   },
   {
-    title: "API",
-    value: "Healthy",
+    title: "API Durumu",
+    value: "Sağlıklı",
     status: "v1",
   },
   {
-    title: "Database",
-    value: "Connected",
+    title: "Veritabanı",
+    value: "Bağlı",
     status: "MySQL",
   },
 ];
 
-const Dashboard = () => {
+export default function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard-header">
-        <h1>Dashboard</h1>
-        <p>Professional Football Intelligence Platform</p>
+        <h1>Gösterge Paneli</h1>
+        <p>Profesyonel Futbol Analiz Platformu</p>
       </div>
 
       <div className="stats-grid">
         {stats.map((item) => (
           <div className="stat-card" key={item.title}>
             <span className="stat-title">{item.title}</span>
+
             <h2>{item.value}</h2>
+
             <span className="stat-status">{item.status}</span>
           </div>
         ))}
@@ -53,29 +55,27 @@ const Dashboard = () => {
 
       <div className="dashboard-panels">
         <div className="dashboard-section">
-          <h3>Recent Activity</h3>
+          <h3>Son İşlemler</h3>
 
           <ul>
-            <li>Dashboard initialized</li>
-            <li>Collector module prepared</li>
-            <li>API module prepared</li>
-            <li>Database connection ready</li>
+            <li>Gösterge paneli oluşturuldu.</li>
+            <li>React uygulaması çalışıyor.</li>
+            <li>Collector modülü hazırlandı.</li>
+            <li>API altyapısı hazırlandı.</li>
           </ul>
         </div>
 
         <div className="dashboard-section">
-          <h3>System Health</h3>
+          <h3>Sistem Durumu</h3>
 
           <ul>
-            <li>API — Healthy</li>
-            <li>Collector — Running</li>
-            <li>Database — Connected</li>
-            <li>Frontend — Online</li>
+            <li>API — Sağlıklı</li>
+            <li>Veri Toplayıcı — Çalışıyor</li>
+            <li>Veritabanı — Bağlı</li>
+            <li>Frontend — Çevrimiçi</li>
           </ul>
         </div>
       </div>
     </div>
   );
-};
-
-export default Dashboard;
+}

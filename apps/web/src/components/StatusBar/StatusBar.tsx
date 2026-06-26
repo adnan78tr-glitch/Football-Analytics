@@ -6,23 +6,21 @@ export default function StatusBar() {
       <div className="status-left">
         <span className="status-item">
           <span className="dot offline"></span>
-          Backend Offline
+          Backend Çevrimdışı
         </span>
 
         <span className="status-item">
           <span className="dot offline"></span>
-          Collector Offline
+          Veri Toplayıcı Çevrimdışı
         </span>
 
         <span className="status-item">
           <span className="dot offline"></span>
-          API Offline
+          API Çevrimdışı
         </span>
       </div>
 
-      <div className="status-right">
-        Version 0.1.0
-      </div>
+      <div className="status-right">Sürüm 0.1.0</div>
     </footer>
   );
 }

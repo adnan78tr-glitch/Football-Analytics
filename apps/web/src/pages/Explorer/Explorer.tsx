@@ -3,46 +3,36 @@ import "./Explorer.css";
 export default function Explorer() {
   return (
     <div className="explorer">
-
       <div className="explorer-header">
-
-        <h1>Fixtures Explorer</h1>
+        <h1>Maç Gezgini</h1>
 
         <div className="toolbar">
-
           <input
             type="text"
-            placeholder="Search fixture..."
+            placeholder="Maç ara..."
           />
 
           <select>
-            <option>All Leagues</option>
+            <option>Tüm Ligler</option>
           </select>
 
           <select>
-            <option>All Markets</option>
+            <option>Tüm Marketler</option>
           </select>
 
-          <button>Refresh</button>
-
+          <button>Yenile</button>
         </div>
-
       </div>
 
       <div className="grid-placeholder">
-
         AG GRID
-
       </div>
 
       <div className="explorer-footer">
+        <span>Aktif Filtre : 0</span>
 
-        <span>Active Filters : 0</span>
-
-        <span>Results : 0</span>
-
+        <span>Sonuç : 0</span>
       </div>
-
     </div>
   );
 }
