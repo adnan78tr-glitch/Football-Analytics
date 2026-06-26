@@ -1,5 +1,23 @@
-.football-grid {
-    flex: 1;
-    min-height: 0;
-    width: 100%;
+.football-grid{
+    flex:1;
+
+    min-height:0;
+
+    width:100%;
+}
+
+.football-grid .ag-root-wrapper{
+    border:none;
+}
+
+.football-grid .ag-header{
+    font-weight:700;
+}
+
+.football-grid .ag-row{
+    cursor:pointer;
+}
+
+.football-grid .ag-row:hover{
+    background:#1e3a5f !important;
 }
