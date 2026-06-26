@@ -1,10 +1,22 @@
 import { AgGridReact } from "ag-grid-react";
-import type { ColDef } from "ag-grid-community";
+import type {
+  ColDef,
+  GridReadyEvent,
+} from "ag-grid-community";
+
+import {
+  ModuleRegistry,
+  AllCommunityModule,
+} from "ag-grid-community";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 
 import "./Grid.css";
+
+ModuleRegistry.registerModules([
+  AllCommunityModule,
+]);
 
 type GridProps<T = unknown> = {
   rowData: T[];
@@ -15,25 +27,28 @@ export default function Grid<T = unknown>({
   rowData,
   columnDefs,
 }: GridProps<T>) {
+  const onGridReady = (params: GridReadyEvent) => {
+    requestAnimationFrame(() => {
+      params.api.autoSizeAllColumns();
+    });
+  };
+
   return (
-    <div
-      className="ag-theme-quartz-dark football-grid"
-      style={{
-        width: "100%",
-        height: "100%",
-        minHeight: "600px",
-      }}
-    >
+    <div className="football-grid ag-theme-quartz">
       <AgGridReact<T>
-        theme="legacy"
         rowData={rowData}
         columnDefs={columnDefs}
+        onGridReady={onGridReady}
+        animateRows
+        rowSelection={{
+          mode: "singleRow",
+        }}
         defaultColDef={{
-          flex: 1,
-          minWidth: 120,
           sortable: true,
           filter: true,
           resizable: true,
+          flex: 1,
+          minWidth: 120,
         }}
       />
     </div>
