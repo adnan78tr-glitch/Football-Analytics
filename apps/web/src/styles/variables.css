@@ -1,0 +1,32 @@
+:root {
+  /* Colors */
+  --color-bg: #111827;
+  --color-surface: #1f2937;
+  --color-card: #1e293b;
+  --color-hover: #334155;
+
+  --color-primary: #3b82f6;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+
+  --color-text: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-border: #374151;
+
+  /* Layout */
+  --header-height: 70px;
+  --sidebar-width: 240px;
+  --status-height: 32px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Shadow */
+  --shadow-card: 0 4px 18px rgba(0, 0, 0, .35);
+
+  /* Font */
+  --font-family: Inter, sans-serif;
+}
