@@ -8,30 +8,44 @@ import {
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 
+import "./Grid.css";
+
 ModuleRegistry.registerModules([
   AllCommunityModule,
 ]);
 
-type Props<T> = {
+type GridProps<T = unknown> = {
   rowData: T[];
   columnDefs: ColDef<T>[];
 };
 
-export default function Grid<T>({
+export default function Grid<T = unknown>({
   rowData,
   columnDefs,
-}: Props<T>) {
+}: GridProps<T>) {
   return (
     <div
-      className="ag-theme-quartz"
+      className="ag-theme-quartz-dark football-grid"
       style={{
         width: "100%",
-        height: 600,
+        height: "100%",
       }}
     >
-      <AgGridReact
+      <AgGridReact<T>
+        theme="legacy"
         rowData={rowData}
         columnDefs={columnDefs}
+        animateRows
+        rowSelection={{
+          mode: "singleRow",
+        }}
+        defaultColDef={{
+          flex: 1,
+          minWidth: 120,
+          sortable: true,
+          filter: true,
+          resizable: true,
+        }}
       />
     </div>
   );

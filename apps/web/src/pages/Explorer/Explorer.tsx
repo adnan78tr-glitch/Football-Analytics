@@ -7,6 +7,9 @@ import Page from "../../components/ui/Page/Page";
 import Toolbar from "../../components/ui/Toolbar/Toolbar";
 import Grid from "../../components/Grid/Grid";
 
+import TeamCell from "../../components/Grid/cells/TeamCell";
+import ScoreCell from "../../components/Grid/cells/ScoreCell";
+
 import { useFixtures } from "../../hooks/useFixtures";
 import type { Fixture } from "../../models/Fixture";
 
@@ -26,21 +29,20 @@ const columnDefs: ColDef<Fixture>[] = [
     headerName: "Ev Sahibi",
     flex: 1,
     minWidth: 220,
+    cellRenderer: TeamCell,
   },
   {
     field: "away",
     headerName: "Deplasman",
     flex: 1,
     minWidth: 220,
+    cellRenderer: TeamCell,
   },
   {
     field: "score",
     headerName: "Skor",
-    width: 90,
-    cellStyle: {
-      textAlign: "center",
-      fontWeight: "bold",
-    },
+    width: 110,
+    cellRenderer: ScoreCell,
   },
   {
     field: "minute",
@@ -48,6 +50,7 @@ const columnDefs: ColDef<Fixture>[] = [
     width: 95,
     cellStyle: {
       textAlign: "center",
+      fontWeight: "bold",
     },
   },
 ];

@@ -7,10 +7,6 @@
     flex-direction: column;
 
     overflow: hidden;
-
-    border-radius: 12px;
-
-    background: #111827;
 }
 
 .football-grid .ag-root-wrapper {
@@ -22,6 +18,23 @@
     flex: 1;
 }
 
-.football-grid .ag-center-cols-viewport {
-    min-height: 0;
+.ag-theme-quartz-dark {
+    --ag-background-color: #111827;
+    --ag-foreground-color: #f8fafc;
+
+    --ag-header-background-color: #1f2937;
+    --ag-header-foreground-color: #f8fafc;
+
+    --ag-row-hover-color: #1e3a8a;
+
+    --ag-odd-row-background-color: #111827;
+    --ag-even-row-background-color: #172033;
+
+    --ag-border-color: #374151;
+
+    --ag-font-size: 14px;
+
+    --ag-row-height: 46px;
+
+    --ag-header-height: 46px;
 }

@@ -1,45 +1,20 @@
-export type MatchStatus =
-  | "NS"
-  | "LIVE"
-  | "HT"
-  | "FT"
-  | "AET"
-  | "PEN"
-  | "POSTPONED"
-  | "CANCELLED";
-
-export interface MarketOdds {
-  home?: number;
-  draw?: number;
-  away?: number;
-
-  over25?: number;
-  under25?: number;
-
-  bttsYes?: number;
-  bttsNo?: number;
-}
-
 export interface Fixture {
   id: number;
 
   date: string;
-  time: string;
 
-  status: MatchStatus;
-  minute?: number;
-
-  country: string;
   league: string;
+  leagueLogo: string;
 
-  homeTeam: string;
-  awayTeam: string;
-
+  home: string;
   homeLogo: string;
+
+  away: string;
   awayLogo: string;
 
-  homeScore: number;
-  awayScore: number;
+  score: string;
 
-  odds: MarketOdds;
+  minute: number;
+
+  status: "LIVE" | "HT" | "FT";
 }
