@@ -9,10 +9,14 @@ export function useFixtures() {
 
   useEffect(() => {
     const load = async () => {
-      const data = await getFixtures();
-
-      setFixtures(data);
-      setLoading(false);
+      try {
+        const data = await getFixtures();
+        setFixtures(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     load();

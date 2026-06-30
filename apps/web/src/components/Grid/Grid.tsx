@@ -4,6 +4,7 @@ import {
   AllCommunityModule,
   type ColDef,
 } from "ag-grid-community";
+import AG_GRID_LOCALE_TR from "../../locales/agGridTr";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
@@ -35,6 +36,7 @@ export default function Grid<T = unknown>({
         theme="legacy"
         rowData={rowData}
         columnDefs={columnDefs}
+        localeText={AG_GRID_LOCALE_TR}
         animateRows
         rowSelection={{
           mode: "singleRow",
